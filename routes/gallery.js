@@ -13,6 +13,9 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/:galleryName', function(req, res, next) {
+    fs.readFile('./data/db.json', 'utf-8', (err, jsonFile)=>{
+        db = JSON.parse(jsonFile);
+    });
     res.render('gallery', { galleryName: req.params.galleryName, data: db });
   });
 
