@@ -26,8 +26,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json({limit:'50mb'}));
 app.use(express.urlencoded({limit:'50mb', extended:true}));
 
-app.use('/', indexRouter);
+//app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/', mainRouter);
 app.use('/main', mainRouter);
 app.use('/gallery', galleryRouter);
 app.use('/add', addRouter);
